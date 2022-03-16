@@ -1,0 +1,21 @@
+server:
+  http:
+    addr: 0.0.0.0:8000
+    timeout: 1s
+  grpc:
+    addr: 0.0.0.0:9000
+    timeout: 1s
+data:
+  database:
+    driver: mysql
+    source: root:root@tcp(127.0.0.1:3306)/test
+  redis:
+    addr: 127.0.0.1:6379
+    read_timeout: 0.2s
+    write_timeout: 0.2s
+ipfs:
+  basePath: /root/newcluster/compose/ipfs00/blocks/
+  cron: "0 10 11 * * * "
+  otherNodes:
+    - http://192.168.1.171:5002
+    - http://192.168.1.171:5003
